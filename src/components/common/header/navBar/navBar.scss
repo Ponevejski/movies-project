@@ -1,0 +1,60 @@
+.navbar {
+	display: flex;
+	height: 100px;
+	justify-content: center;
+	background-color: #b5f186;
+	width: 100%;
+	border-bottom: 2px solid black;
+}
+
+.navbar__logo {
+	width: 100px;
+	height: 100px;
+}
+
+.navbar__header {
+	font-size: 30px;
+	font-weight: 700;
+	margin-left: 31%;
+}
+
+.container {
+	width: 1140px;
+	display: flex;
+	align-items: center;
+}
+
+.navbar__buttons {
+	display: flex;
+	margin-left: auto;
+}
+
+.navbar__button {
+	padding: 18px;
+	background-color: antiquewhite;
+	border: 2px solid black;
+}
+
+.navbar__button:hover {
+	background-color: #5d4df6;
+}
+
+.navbar__button__registration {
+}
+
+.navbar__button__login {
+	margin-right: 20px;
+}
+
+.navbar__button__link {
+	text-decoration: none;
+	color: black;
+}
+
+.navbar__button__link:visited {
+	color: black;
+}
+
+.navbar__button__link:active {
+	color: #ffff00;
+}

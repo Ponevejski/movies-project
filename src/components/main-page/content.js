@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import Cards from "./cards/cards";
+import CardInfo from "./cards/card-info";
 import SearchMovie from "./search/search-movie";
 import Genres from "./genres/genres";
 
@@ -50,7 +52,16 @@ const Content = () => {
 				onMaxRatingFilter={onMaxRatingFilter}
 				onHandleRating={onHandleRating}
 			/>
-			<Cards filteredMovies={filteredMovies} />
+
+			<BrowserRouter>
+				<Route
+					path="/"
+					exact={true}
+					render={() => <Cards filteredMovies={filteredMovies} />}
+				/>
+
+				<Route path="/card/:id" component={CardInfo} />
+			</BrowserRouter>
 		</>
 	);
 };

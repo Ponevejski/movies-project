@@ -14,6 +14,7 @@ const Cards = ({ filteredMovies }) => {
 						rating={item.vote_average}
 						image={item.poster_path}
 						release={item.release_date}
+						id={item.id}
 					/>
 				);
 			})}

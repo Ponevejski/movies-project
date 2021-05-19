@@ -1,0 +1,15 @@
+.input__navigation-bar {
+	border: none;
+	border-bottom: #000000 solid 3px;
+	background: transparent;
+	width: 100%;
+	padding: 3px;
+}
+.input__navigation-bar:focus {
+	outline: none;
+	transform: scale(1.01);
+}
+.input__navigation-bar::placeholder {
+	color: #000000;
+	font-weight: 500;
+}

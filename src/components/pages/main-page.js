@@ -1,11 +1,9 @@
 import React from "react";
 import Content from "../main-page/content";
-import Header from "./header/header";
 
 const MainPage = () => {
 	return (
 		<>
-			<Header />
 			<Content />
 		</>
 	);
