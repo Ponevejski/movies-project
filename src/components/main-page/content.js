@@ -5,7 +5,7 @@ import Cards from "./cards/cards";
 import SearchMovie from "./search/search-movie";
 import Genres from "./genres/genres";
 
-import { fetchMovie, fetchGenre } from "../../../redux/actions/actions";
+import { fetchMovie, fetchGenre } from "../../redux/actions/actions";
 
 const Content = () => {
 	const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import React from "react";
-import Content from "../main-page/content/content";
+import Content from "../main-page/content";
 import Header from "./header/header";
 
 const MainPage = () => {
