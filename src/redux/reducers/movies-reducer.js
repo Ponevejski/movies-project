@@ -1,7 +1,7 @@
 import { GETED_MOVIE } from "../action-types/actionTypes";
 
 const initialState = {
-	movie: [
+	movies: [
 		{
 			page: 1,
 			results: [
@@ -31,7 +31,7 @@ const movieReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case GETED_MOVIE:
 			return {
-				movie: [action.payload],
+				movies: [action.payload],
 			};
 		default:
 			return state;

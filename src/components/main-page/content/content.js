@@ -9,7 +9,7 @@ import { fetchMovie, fetchGenre } from "../../../redux/actions/actions";
 
 const Content = () => {
 	const dispatch = useDispatch();
-	const movie = useSelector((state) => state.movie);
+	const movie = useSelector((state) => state.movies);
 	const [filteredMovies, setFilteredMovies] = useState(movie[0].results);
 	const [nameOfMovie, setNameOfMovie] = useState();
 	const [rating, setRating] = useState();
