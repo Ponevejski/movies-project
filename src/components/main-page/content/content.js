@@ -10,28 +10,33 @@ import { fetchMovie, fetchGenre } from "../../../redux/actions/actions";
 const Content = () => {
 	const dispatch = useDispatch();
 	const movie = useSelector((state) => state.movies);
-	const [filteredMovies, setFilteredMovies] = useState(movie[0].results);
+	const [filteredMovies, setFilteredMovies] = useState(movie);
 	const [nameOfMovie, setNameOfMovie] = useState();
-	const [rating, setRating] = useState();
+	const [minRating, setMinRating] = useState();
+	const [maxRating, setMaxRating] = useState();
 
 	useEffect(() => {
-		setFilteredMovies(movie[0].results);
-	}, [movie, rating]);
+		setFilteredMovies(movie);
+	}, [movie, minRating]);
 
-	console.log(filteredMovies);
 	const onMovieChange = (e) => setNameOfMovie(e.target.value);
 	const onMovieDispatch = () => {
 		dispatch(fetchMovie(nameOfMovie));
 	};
 
-	const onGenreDispatch = (num) => {
-		dispatch(fetchGenre(num));
+	const onGenreDispatch = (genre_id) => {
+		dispatch(fetchGenre(genre_id));
 	};
 
-	const onRatingHandler = (e) => setRating(e.target.value);
+	const onMinRatingFilter = (e) => setMinRating(e.target.value);
+	const onMaxRatingFilter = (e) => setMaxRating(e.target.value);
+
 	const onHandleRating = () => {
 		setFilteredMovies(
-			filteredMovies.filter((item) => item.vote_average >= rating)
+			filteredMovies.filter(
+				(item) =>
+					item.vote_average >= minRating && item.vote_average <= maxRating
+			)
 		);
 	};
 
@@ -41,10 +46,11 @@ const Content = () => {
 			<SearchMovie
 				onMovieChange={onMovieChange}
 				onMovieDispatch={onMovieDispatch}
-				onRatingHandler={onRatingHandler}
+				onMinRatingFilter={onMinRatingFilter}
+				onMaxRatingFilter={onMaxRatingFilter}
 				onHandleRating={onHandleRating}
 			/>
-			<Cards filteredMovies={filteredMovies} rating={rating} />
+			<Cards filteredMovies={filteredMovies} />
 		</>
 	);
 };
